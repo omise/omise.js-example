@@ -1,0 +1,7 @@
+body { background-color: #efefef; }
+h1 { font-size: 1.3em; color: #444; font-family: "Helvetica", "Trebuchet MS", sans-serif; font-weight: 400; text-shadow: 1px 1px #fff; }
+p { font-size: .9em; color: #666; font-family: "Helvetica", "Trebuchet MS", sans-serif; text-shadow: 1px 1px #fff; }
+.form { width: 600px; margin: auto; padding: 10px; }
+form { display: block; margin-top: 20px; }
+button { display: inline-block; min-width: 200px; background-color: #0588eb; color: #fff; padding: 10px; border: 2px solid #047ad2; border-radius: 3px; cursor: pointer; outline: none; transition: all 0.15s ease-in-out 0s; }
+button:hover { background-color: #047ad2; }

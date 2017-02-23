@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>Example Checkout Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+  .card-form {
+    max-width: 300px;
+    margin-top: 40px;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <form id="card-form" class="card-form">
+      <div class="form-group">
+        <label>Card Number</label>
+        <input type="text" name="cardNumber" class="form-control" placeholder="••••••••••••••••" />
+      </div>
+
+      <div class="form-group">
+        <label>Name on card</label>
+        <input type="text" name="nameOnCard" class="form-control" placeholder="Full Name" />
+      </div>
+
+      <div class="form-group">
+        <label>Expiry date</label>
+        <div class="row">
+          <div class="col-xs-6">
+            <select class="form-control" name="expiryMonth">
+              <option value="">MM</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <div class="col-xs-6">
+            <select class="form-control" name="expiryYear">
+              <option value="">YYYY</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Security code</label>
+        <input type="text" name="securityCode" class="form-control" placeholder="123" />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary">Checkout</button>
+      </div>
+    </form>
+
+
+    <form id="checkout-form" action="/checkout" method="POST">
+      <input type="hidden" name="token" />
+      <!-- More information is you want -->
+    </form>
+  </div>
+
+  <script src="https://cdn.omise.co/omise.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

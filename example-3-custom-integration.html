@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Example 3: Custom integration</title>
+  <link rel="stylesheet" href="styles/examples.css">
+  <link rel="stylesheet" href="styles/custom.css">
+</head>
+<body>
+
+  <div class="form">
+
+    <h1>Example 3: Custom integration</h1>
+    <p>Create a checkout button by uses custom integration way to integrate.</p>
+
+    <form name="checkoutForm" method="POST" action="checkout.php">
+      <!-- Create your own button -->
+      <button type="submit" id="checkout-button-1">My Checkout Button !</button>
+    </form>
+
+  </div>
+
+  <!-- Include card.js library -->
+  <script type="text/javascript" src="https://cdn.omise.co/omise.js"></script>
+
+  <!-- Config the card.js library -->
+  <script type="text/javascript">
+    // Set default parameters
+    OmiseCard.configure({
+      publicKey: 'YOUR_PUBLIC_KEY',
+      image: 'https://cdn.omise.co/assets/dashboard/images/omise-logo.png',
+      amount: 99500
+    });
+
+    // Configuring your own custom button
+    OmiseCard.configureButton('#checkout-button-1', {
+      frameLabel: 'Merchant name',
+      submitLabel: 'PAY RIGHT NOW !',
+    });
+
+    // Then, attach all of the config and initiate it by 'OmiseCard.attach();' method
+    OmiseCard.attach();
+  </script>
+
+</body>
+</html>

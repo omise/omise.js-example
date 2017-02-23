@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: #0588eb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #047ad2;
+  text-decoration: underline;
+}
+
+li {
+  line-height: 2em;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.token {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+.back-to-index {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #333;
+}
