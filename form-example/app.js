@@ -12,7 +12,10 @@ checkoutForm.addEventListener('submit', submitHandler, false);
 function submitHandler(event) {
   event.preventDefault();
 
-  // NOTE: Using `data-name` because we don't want to send any credit card information to the server.
+  /*
+  NOTE: Using `data-name` to prevent sending credit card information fields to the backend server via HTTP Post
+  (according to the security best practice https://www.omise.co/security-best-practices#never-send-card-data-through-your-servers).
+  */
   var cardInformation = {
     name:             document.querySelector('[data-name="nameOnCard"').value,
     number:           document.querySelector('[data-name="cardNumber"').value,
