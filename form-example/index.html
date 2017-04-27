@@ -20,7 +20,7 @@
     NOTE: Using `data-name` to prevent sending credit card information fields to the backend server via HTTP Post
     (according to the security best practice https://www.omise.co/security-best-practices#never-send-card-data-through-your-servers).
     -->
-    <form id="checkout-form" class="checkout-form" action="/" method="GET">
+    <form id="checkout-form" class="checkout-form" action="/checkout.php" method="POST">
       <div class="form-group">
         <label>Card Number</label>
         <input type="text" data-name="cardNumber" class="form-control" placeholder="••••••••••••••••" />
