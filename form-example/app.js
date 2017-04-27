@@ -25,7 +25,7 @@ function submitHandler(event) {
     if (statusCode === 200) {
       // Success: send back the TOKEN_ID to your server. The TOKEN_ID can be
       // found in `response.id`.
-      checkoutForm.token.value = response.id;
+      checkoutForm.omiseToken.value = response.id;
 
       checkoutForm.submit();
     }
