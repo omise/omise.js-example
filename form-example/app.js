@@ -17,11 +17,11 @@ function submitHandler(event) {
   (according to the security best practice https://www.omise.co/security-best-practices#never-send-card-data-through-your-servers).
   */
   var cardInformation = {
-    name:             document.querySelector('[data-name="nameOnCard"').value,
-    number:           document.querySelector('[data-name="cardNumber"').value,
-    expiration_month: document.querySelector('[data-name="expiryMonth"').value,
-    expiration_year:  document.querySelector('[data-name="expiryYear"').value,
-    security_code:    document.querySelector('[data-name="securityCode"').value
+    name:             document.querySelector('[data-name="nameOnCard"]').value,
+    number:           document.querySelector('[data-name="cardNumber"]').value,
+    expiration_month: document.querySelector('[data-name="expiryMonth"]').value,
+    expiration_year:  document.querySelector('[data-name="expiryYear"]').value,
+    security_code:    document.querySelector('[data-name="securityCode"]').value
   };
 
   Omise.createToken('card', cardInformation, function(statusCode, response) {
