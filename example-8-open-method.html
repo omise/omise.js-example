@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.omise.co/omise.js"></script>
+</head>
+
+<body>
+  <h1>Hello</h1>
+  <form id="checkout-form" action="checkout.php" method="GET">
+    <div>
+      <input type="text" name="amount" value="1000">
+    </div>
+    <input type="hidden" name="omiseToken">
+    <button id="pay-button-thb">
+      Pay in THB
+    </button>
+    <button id="pay-button-usd">
+      Pay in THB
+    </button>
+  </form>
+
+  <script>
+    OmiseCard.configure({
+      publicKey: 'pkey_test_5bgesov6ufhd884goy6',
+      amount: 99500,
+      submitLabel: 'Pay',
+      submitFormTarget: '#checkout-form',
+    });
+    const buttonTHB = document.querySelector('#pay-button-thb')
+    const buttonUSD = document.querySelector('#pay-button-usd')
+    const amount = document.querySelector('input[name="amount"]')
+    const form = document.querySelector('#checkout-form')
+    const omiseToken = document.querySelector('input[name="omiseToken"]')
+
+    const formClosedhandler = () => {
+      console.log('Form is closed.')
+    }
+
+    const createTokenSuccessHandler = (token) => {
+      console.log('[Omise.js Testing page]: Payment success ! TOKEN' + token)
+      omiseToken.value = token
+      form.submit()
+    }
+
+    buttonTHB.addEventListener('click', (event) => {
+      event.preventDefault()
+      OmiseCard.open({
+        frameLabel: 'Esimo',
+        frameDescription: 'Invoice #3847 in THB',
+        currency: 'THB',
+        amount: amount.value,
+        onCreateTokenSuccess: createTokenSuccessHandler,
+        onFormClosed: formClosedhandler,
+      })
+    })
+
+    buttonUSD.addEventListener('click', (event) => {
+      event.preventDefault()
+      OmiseCard.open({
+        frameLabel: 'Esimo',
+        frameDescription: 'Invoice #3847 in USD',
+        currency: 'USD',
+        amount: amount.value,
+        onCreateTokenSuccess: createTokenSuccessHandler,
+        onFormClosed: formClosedhandler,
+      })
+    })
+
+  </script>
+</body>
+
+</html>
