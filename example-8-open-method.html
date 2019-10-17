@@ -37,17 +37,17 @@
     const form = document.querySelector('#checkout-form')
     const omiseToken = document.querySelector('input[name="omiseToken"]')
 
-    const formClosedhandler = () => {
+    function formClosedhandler() {
       console.log('Form is closed.')
     }
 
-    const createTokenSuccessHandler = (token) => {
+    function createTokenSuccessHandler(token) {
       console.log('[Omise.js Testing page]: Payment success ! TOKEN' + token)
       omiseToken.value = token
       form.submit()
     }
 
-    buttonTHB.addEventListener('click', (event) => {
+    buttonTHB.addEventListener('click', function(event) {
       event.preventDefault()
       OmiseCard.open({
         frameLabel: 'Esimo',
@@ -59,7 +59,7 @@
       })
     })
 
-    buttonUSD.addEventListener('click', (event) => {
+    buttonUSD.addEventListener('click', function(event) {
       event.preventDefault()
       OmiseCard.open({
         frameLabel: 'Esimo',
